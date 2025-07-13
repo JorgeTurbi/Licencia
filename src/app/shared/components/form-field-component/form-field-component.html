@@ -1,0 +1,9 @@
+    <div class="space-y-2">
+      <label *ngIf="label" class="block text-sm font-medium text-foreground">
+        {{ label }}
+      </label>
+      <ng-content></ng-content>
+      <div *ngIf="message" class="text-sm text-red-500">
+        {{ message }}
+      </div>
+    </div>

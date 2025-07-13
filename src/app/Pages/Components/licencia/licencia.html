@@ -1,0 +1,61 @@
+<!-- Registro de Licencia Medica -->
+<ui-card customClass="max-w-4xl mx-auto">
+  <ui-card-header>
+    <ui-card-title class="text-center text-2xl text-military-primary">
+      Registro de Licencia Médica
+    </ui-card-title>
+  </ui-card-header>
+  <ui-card-content>
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <ui-form-field label="Rango">
+        <ui-select [(ngModel)]="rank" name="rank" >
+          <option *ngFor="let rank of ranks" [value]="rank">{{ rank }}</option>
+        </ui-select>
+      </ui-form-field>
+
+      <ui-form-field label="Institución">
+        <ui-select [(ngModel)]="institution" name="institution">
+          <option *ngFor="let institution of institutions" [value]="institution">
+            {{ institution }}
+          </option>
+        </ui-select>
+      </ui-form-field>
+
+      <ui-form-field label="Nombres y Apellidos">
+        <ui-input [(ngModel)]="fullName" name="fullName" placeholder="Ej. Juan Pérez" />
+      </ui-form-field>
+
+      <ui-form-field label="Cédula">
+        <ui-input [(ngModel)]="documentId" name="documentId" placeholder="000-0000000-0" />
+      </ui-form-field>
+
+      <ui-form-field label="Diagnóstico">
+        <ui-select [(ngModel)]="diagnosisId" name="diagnosisId">
+          <option *ngFor="let diagnosis of diagnoses" [value]="diagnosis.id">
+            {{ diagnosis.name }}
+          </option>
+        </ui-select>
+      </ui-form-field>
+
+      <ui-form-field label="Hospital">
+        <ui-select [(ngModel)]="hospital" name="hospital">
+          <option *ngFor="let hospital of hospitals" [value]="hospital">
+            {{ hospital }}
+          </option>
+        </ui-select>
+      </ui-form-field>
+
+      <ui-form-field label="Correo Electrónico (opcional)" class="md:col-span-2">
+        <ui-input [(ngModel)]="email" name="email" type="email" placeholder="correo@ejemplo.com" />
+      </ui-form-field>
+
+      <!-- Acciones del Formulario -->
+      <div class="md:col-span-2 flex justify-end gap-4">
+        <ui-button type="submit">Registrar</ui-button>
+        <ui-button type="button" (click)="resetForm()" [disabled]="isSubmitting">Limpiar</ui-button>
+      </div>
+
+    </form>
+  </ui-card-content>
+</ui-card>

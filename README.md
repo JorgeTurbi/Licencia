@@ -1,59 +1,203 @@
-# SIMMILAPP
+# 🎖️ SIMMILAPP - Sistema de Licencias Médicas Militares
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0.
+Aplicación moderna desarrollada con **Angular 20**, utilizando componentes standalone, TailwindCSS y buenas prácticas de desarrollo. Diseñada para gestionar licencias médicas del personal militar de manera eficiente, segura y responsiva.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Tecnologías Usadas
+
+- 🅰️ **Angular 20 (standalone components)**
+- 🌬️ **TailwindCSS** para estilos rápidos y consistentes
+- 🧩 **Lucide Angular** para íconos
+- 🧠 **Zod** + **React Hook Form** adaptado con Angular (con validación)
+- 🧪 **Jest / Karma** para pruebas unitarias (según configuración)
+- 🐘 **RxJS / Signals** para gestión reactiva del estado
+
+---
+
+## 🛠️ Instalación del Proyecto
+
+```bash
+git clone https://github.com/tuusuario/simmilapp.git
+cd simmilapp
+npm install
+```
+
+---
+
+## 📦 Scripts Comunes
+
+| Comando | Descripción |
+|--------|-------------|
+| `npm start` | 🔧 Inicia el servidor local (`ng serve`) |
+| `npm run build` | 🏗️ Compila la app para producción (`dist/`) |
+| `npm run test` | ✅ Ejecuta pruebas unitarias |
+| `npm run lint` | 🔍 Verifica el estilo de código |
+| `ng generate component X` | ⚡ Genera un nuevo componente standalone |
+
+---
+
+## 🌍 Servidor de Desarrollo
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abre tu navegador en: [http://localhost:4200](http://localhost:4200)  
+🔁 El proyecto se recargará automáticamente al guardar los archivos.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📁 Estructura del Proyecto
 
-```bash
-ng generate component component-name
+```
+simmilapp/
+├── src/
+│   ├── app/
+│   │   ├── layout/
+│   │   ├── pages/
+│   │   ├── shared/
+│   │   └── core/
+│   ├── assets/
+│   ├── environments/
+│   └── styles/
+├── tailwind.config.js
+├── angular.json
+├── README.md
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+> ✅ Organizado para escalabilidad, reutilización y claridad.
+
+---
+
+## 📸 Capturas de Pantalla
+
+| Dashboard Principal | Formulario de Licencia Médica |
+|---------------------|-------------------------------|
+| ![Dashboard](docs/screenshot-dashboard.png) | ![Formulario](docs/screenshot-form.png) |
+
+---
+
+## 📚 Recursos Útiles
+
+- [Angular CLI](https://angular.dev/tools/cli)
+- [TailwindCSS Docs](https://tailwindcss.com/docs)
+- [Lucide Icons Angular](https://www.npmjs.com/package/lucide-angular)
+- [Angular Standalone Components](https://angular.dev/guide/standalone-components)
+
+---
+
+## 🧑‍💻 Autor
+
+**Jorge Turbí** – _Encargado de Desarrollo de Nuevas Aplicaciones - FF.AA. República Dominicana_  
+📧 jturbi@ejemplo.com  
+🔗 [linkedin.com/in/jturbi](https://linkedin.com/in/jturbi)
+
+---
+
+## 📄 Licencia
+
+MIT © 2025 - Todos los derechos reservados.
+
+---
+
+# 🎖️ SIMMILAPP - Military Medical Licence System
+
+Modern application built with **Angular 20**, using standalone components, TailwindCSS, and development best practices. Designed to efficiently and securely manage military personnel medical leave.
+
+---
+
+## 🚀 Technologies Used
+
+- 🅰️ **Angular 20 (standalone components)**
+- 🌬️ **TailwindCSS** for fast and consistent styling
+- 🧩 **Lucide Angular** for icons
+- 🧠 **Zod** + **React Hook Form** adapted with Angular (validation)
+- 🧪 **Jest / Karma** for unit testing (depending on config)
+- 🐘 **RxJS / Signals** for reactive state management
+
+---
+
+## 🛠️ Project Setup
 
 ```bash
-ng generate --help
+git clone https://github.com/youruser/simmilapp.git
+cd simmilapp
+npm install
 ```
 
-## Building
+---
 
-To build the project run:
+## 📦 Common Scripts
+
+| Command | Description |
+|--------|-------------|
+| `npm start` | 🔧 Starts the local dev server (`ng serve`) |
+| `npm run build` | 🏗️ Builds the app for production (`dist/`) |
+| `npm run test` | ✅ Runs unit tests |
+| `npm run lint` | 🔍 Lints the code |
+| `ng generate component X` | ⚡ Generate new standalone component |
+
+---
+
+## 🌍 Development Server
 
 ```bash
-ng build
+ng serve
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Open your browser at: [http://localhost:4200](http://localhost:4200)  
+🔁 The app will reload automatically on file changes.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 📁 Project Structure
 
-```bash
-ng test
+```
+simmilapp/
+├── src/
+│   ├── app/
+│   │   ├── layout/
+│   │   ├── pages/
+│   │   ├── shared/
+│   │   └── core/
+│   ├── assets/
+│   ├── environments/
+│   └── styles/
+├── tailwind.config.js
+├── angular.json
+├── README.md
 ```
 
-## Running end-to-end tests
+> ✅ Organized for scalability, reusability, and clarity.
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+## 📸 Screenshots
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+| Main Dashboard | Medical Leave Form |
+|----------------|--------------------|
+| ![Dashboard](docs/screenshot-dashboard.png) | ![Form](docs/screenshot-form.png) |
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📚 Resources
+
+- [Angular CLI](https://angular.dev/tools/cli)
+- [TailwindCSS Docs](https://tailwindcss.com/docs)
+- [Lucide Angular Icons](https://www.npmjs.com/package/lucide-angular)
+- [Angular Standalone Components](https://angular.dev/guide/standalone-components)
+
+---
+
+## 🧑‍💻 Author
+
+**Jorge Turbí** – _Lead Application Developer - Dominican Armed Forces_  
+📧 jturbi@sychar.com  
+🔗 [linkedin.com/in/jturbi](https://linkedin.com/in/jturbi)
+
+---
+
+## 📄 License
+
+MIT © 2025 - All rights reserved.

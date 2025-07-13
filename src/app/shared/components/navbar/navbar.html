@@ -1,0 +1,48 @@
+    <header class="bg-military-primary text-white p-4 shadow-md">
+      <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+        <div class="flex items-center gap-2">
+          <lucide-icon [img]="Hospital" class="h-8 w-8" />
+          <h1 class="text-xl md:text-2xl font-bold">
+            Sistema de Licencias Médicas Militares
+          </h1>
+        </div>
+
+        <nav class="flex items-center gap-3 mt-4 md:mt-0">
+          <a routerLink="/licencia" class="hover:bg-military-secondary px-3 py-2 rounded flex items-center gap-2"
+            [ngClass]="{ 'bg-military-secondary': isActive('/') }">
+            <lucide-icon [img]="User" class="h-4 w-4" />
+            Nueva Licencia
+          </a>
+
+          <a routerLink="/history" class="hover:bg-military-secondary px-3 py-2 rounded flex items-center gap-2"
+            [ngClass]="{ 'bg-military-secondary': isActive('/history') }">
+            <lucide-icon [img]="History" class="h-4 w-4" />
+            Historial
+          </a>
+
+          <a routerLink="/diagnosis" class="hover:bg-military-secondary px-3 py-2 rounded flex items-center gap-2"
+            [ngClass]="{ 'bg-military-secondary': isActive('/diagnosis') }">
+            <lucide-icon [img]="Stethoscope" class="h-4 w-4" />
+            Diagnósticos
+          </a>
+
+          <a routerLink="/personnel" class="hover:bg-military-secondary px-3 py-2 rounded flex items-center gap-2"
+            [ngClass]="{ 'bg-military-secondary': isActive('/personnel') }">
+            <lucide-icon [img]="Users" class="h-4 w-4" />
+            Personal
+          </a>
+
+          <a routerLink="/payroll" class="hover:bg-military-secondary px-3 py-2 rounded flex items-center gap-2"
+            [ngClass]="{ 'bg-military-secondary': isActive('/payroll') }">
+            <lucide-icon [img]="DollarSign" class="h-4 w-4" />
+            Nómina
+          </a>
+
+          <button class="ml-3 flex items-center gap-2 hover:bg-military-secondary px-3 py-2 rounded"
+            (click)="logout()">
+            <lucide-icon [img]="LogOut" class="h-4 w-4" />
+            Cerrar Sesión
+          </button>
+        </nav>
+      </div>
+    </header>

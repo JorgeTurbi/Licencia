@@ -1,61 +1,128 @@
-<!-- Registro de Licencia Medica -->
-<ui-card customClass="max-w-4xl mx-auto">
-  <ui-card-header>
-    <ui-card-title class="text-center text-2xl text-military-primary">
-      Registro de Licencia Médica
-    </ui-card-title>
-  </ui-card-header>
-  <ui-card-content>
-    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="w-full max-w-4xl mx-auto rounded-xl shadow-lg border bg-white">
+  <div class="p-4 border-b">
+    <h2 class="text-center text-2xl font-semibold text-military-primary">Registro de Licencia Médica</h2>
+  </div>
+  <div class="p-6">
+    <form class="space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Rango -->
+        <div class="w-full">
+          <label class="block text-sm font-medium">Rango</label>
+          <select class="w-full border rounded p-2">
+            <option>Seleccionar rango</option>
+          </select>
+        </div>
 
-      <ui-form-field label="Rango">
-        <ui-select [(ngModel)]="rank" name="rank" >
-          <option *ngFor="let rank of ranks" [value]="rank">{{ rank }}</option>
-        </ui-select>
-      </ui-form-field>
+        <!-- Institución -->
+        <div class="w-full">
+          <label class="block text-sm font-medium">Institución</label>
+          <select class="w-full border rounded p-2">
+            <option>Seleccionar institución</option>
+          </select>
+        </div>
 
-      <ui-form-field label="Institución">
-        <ui-select [(ngModel)]="institution" name="institution">
-          <option *ngFor="let institution of institutions" [value]="institution">
-            {{ institution }}
-          </option>
-        </ui-select>
-      </ui-form-field>
+        <!-- Nombres y Apellidos -->
+        <div class="w-full">
+          <label class="block text-sm font-medium">Nombres y Apellidos</label>
+          <input type="text" class="w-full border rounded p-2" placeholder="Ej. Juan Pérez Rodríguez" />
+        </div>
 
-      <ui-form-field label="Nombres y Apellidos">
-        <ui-input [(ngModel)]="fullName" name="fullName" placeholder="Ej. Juan Pérez" />
-      </ui-form-field>
+        <!-- Cédula -->
+        <div class="w-full flex items-end gap-2">
+          <div class="w-full">
+            <label class="block text-sm font-medium">Cédula</label>
+            <input type="text" class="w-full border rounded p-2" placeholder="000-0000000-1" />
+          </div>
+          <button type="button" class="p-2 border rounded bg-gray-100 self-end">
+            <lucide-angular [img]="Search" class="w-4 h-4" />
+          </button>
+        </div>
 
-      <ui-form-field label="Cédula">
-        <ui-input [(ngModel)]="documentId" name="documentId" placeholder="000-0000000-0" />
-      </ui-form-field>
+      <!-- Diagnóstico -->
+        <div class="w-full flex items-end gap-2">
+          <div class="w-full">
+            <label class="block text-sm font-medium">Diagnóstico</label>
+            <select class="w-full border rounded p-2">
+              <option>Seleccionar diagnóstico</option>
+            </select>
+          </div>
+          <button type="button" class="px-3 py-2 border rounded bg-gray-100" (click)="openDiagnosisDialog()">
+              <lucide-angular [img]="Settings" class="w-4 h-4" />
+            </button>
+        </div>
 
-      <ui-form-field label="Diagnóstico">
-        <ui-select [(ngModel)]="diagnosisId" name="diagnosisId">
-          <option *ngFor="let diagnosis of diagnoses" [value]="diagnosis.id">
-            {{ diagnosis.name }}
-          </option>
-        </ui-select>
-      </ui-form-field>
+        <!-- Descripción del diagnóstico -->
+        <div class="col-span-2">
+          <label class="text-sm font-medium flex items-center gap-1">
+            <lucide-angular [img]="AlignLeft" class="w-4 h-4" />
+            Descripción del diagnóstico
+          </label>
+          <textarea rows="3" class="w-full border rounded p-2" placeholder="Descripción o notas adicionales sobre el diagnóstico"></textarea>
+        </div>
 
-      <ui-form-field label="Hospital">
-        <ui-select [(ngModel)]="hospital" name="hospital">
-          <option *ngFor="let hospital of hospitals" [value]="hospital">
-            {{ hospital }}
-          </option>
-        </ui-select>
-      </ui-form-field>
+        <!-- Médico Responsable -->
+        <div class="w-full flex items-end gap-2">
+          <div class="w-full">
+            <label class="text-sm font-medium">Médico Responsable</label>
+            <select class="w-full border rounded p-2">
+              <option>Seleccionar médico</option>
+            </select>
+          </div>
+          <button type="button" class="p-2 border rounded bg-gray-100 self-end">
+            <lucide-angular [img]="Plus" class="w-4 h-4" />
+          </button>
+        </div>
 
-      <ui-form-field label="Correo Electrónico (opcional)" class="md:col-span-2">
-        <ui-input [(ngModel)]="email" name="email" type="email" placeholder="correo@ejemplo.com" />
-      </ui-form-field>
+        <!-- Hospital -->
+        <div class="w-full">
+          <label class="text-sm font-medium">Hospital</label>
+          <select class="w-full border rounded p-2">
+            <option>Seleccionar hospital</option>
+          </select>
+        </div>
 
-      <!-- Acciones del Formulario -->
-      <div class="md:col-span-2 flex justify-end gap-4">
-        <ui-button type="submit">Registrar</ui-button>
-        <ui-button type="button" (click)="resetForm()" [disabled]="isSubmitting">Limpiar</ui-button>
+        <!-- Email -->
+        <div class="col-span-2">
+          <label class="text-sm font-medium">Correo electrónico (opcional)</label>
+          <input type="email" class="w-full border rounded p-2" placeholder="correo@ejemplo.com" />
+        </div>
+
+        <!-- Fecha de inicio -->
+        <div class="w-full">
+          <label class="text-sm font-medium">Fecha de inicio</label>
+          <input type="date" class="w-full border rounded p-2" />
+        </div>
+
+        <!-- Fecha de fin -->
+        <div class="w-full">
+          <label class="text-sm font-medium">Fecha de fin</label>
+          <input type="date" class="w-full border rounded p-2" />
+        </div>
       </div>
 
+      <!-- Días calculados -->
+      <div class="mt-4 text-center bg-gray-100 rounded p-2">
+        Días de licencia: <strong>0</strong>
+      </div>
+
+      <!-- Botones -->
+      <div class="flex justify-center gap-4 mt-4">
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded flex items-center gap-2 hover:bg-blue-700 transition">
+          <lucide-angular [img]="Send" class="w-4 h-4" /> Guardar y Enviar
+        </button>
+        <button type="button" class="border px-4 py-2 rounded flex items-center gap-2 hover:bg-gray-50 transition">
+          <lucide-angular [img]="Printer" class="w-4 h-4" /> Solo Imprimir
+        </button>
+      </div>
     </form>
-  </ui-card-content>
-</ui-card>
+  </div>
+</div>
+<!-- Diálogo de Diagnóstico -->
+<!-- <app-diagnosis-dialog *ngIf="isDiagnosisDialogOpen" [isOpen]="isDiagnosisDialogOpen"></app-diagnosis-dialog> -->
+
+<!-- Diálogo de Diagnóstico -->
+<div *ngIf="isDiagnosisDialogOpen" (click)="closeDiagnosisDialog()" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+  <div class="bg-white rounded-xl p-6 w-full max-w-xl shadow-lg" (click)="$event.stopPropagation()">
+    <app-diagnosis-dialog [isOpen]="isDiagnosisDialogOpen" (close)="closeDiagnosisDialog()"></app-diagnosis-dialog>
+  </div>
+</div>

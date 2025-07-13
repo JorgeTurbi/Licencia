@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'ui-button',
+    selector: 'ui-icon-button',
   standalone: true,
   imports: [],
-  templateUrl: './button-component.html',
-  styleUrl: './button-component.css'
+  templateUrl: './icon-button-component.html',
+  styleUrl: './icon-button-component.css'
 })
-export class ButtonComponent {
+export class IconButtonComponent {
   @Input() disabled = false;
   @Input() type: 'button' | 'submit' = 'button';
 }

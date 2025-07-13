@@ -1,0 +1,23 @@
+    <ui-form-field label="Rango Médico">
+      <ui-select [(ngModel)]="doctorRank" name="doctorRank">
+        <option *ngFor="let rank of doctorRanks" [value]="rank">{{ rank }}</option>
+      </ui-select>
+    </ui-form-field>
+
+    <ui-form-field label="Nombre del Médico">
+      <ui-input [(ngModel)]="doctorFirstName" name="doctorFirstName" placeholder="Ej. Carlos" />
+    </ui-form-field>
+
+    <ui-form-field label="Apellido del Médico">
+      <ui-input [(ngModel)]="doctorLastName" name="doctorLastName" placeholder="Ej. Rodríguez" />
+    </ui-form-field>
+
+    <ui-form-field label="Institución Médica">
+      <ui-select [(ngModel)]="doctorInstitution" name="doctorInstitution">
+        <option *ngFor="let institution of institutions" [value]="institution">{{ institution }}</option>
+      </ui-select>
+    </ui-form-field>
+
+    <ui-form-field label="No. Exequátur">
+      <ui-input [(ngModel)]="doctorExequatur" name="doctorExequatur" placeholder="Ej. 123456" />
+    </ui-form-field>

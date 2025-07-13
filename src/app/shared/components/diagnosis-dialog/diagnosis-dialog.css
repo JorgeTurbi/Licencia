@@ -1,0 +1,4 @@
+.diagnosis-list-container {
+  max-height: 300px; /* o el alto que desees */
+  overflow-y: auto;
+}
